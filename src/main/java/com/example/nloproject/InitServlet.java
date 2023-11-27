@@ -8,6 +8,6 @@ import jakarta.servlet.annotation.*;
 @WebServlet(name = "init", value = "/init")
 public class InitServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.sendRedirect("/main.jsp");
+
     }
 }
