@@ -19,6 +19,6 @@
     <script src="<c:url value='../scripts/script.js'/>"></script>
 </head>
 <body>
-
+<div> </div>
 </body>
 </html>
