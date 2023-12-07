@@ -1,0 +1,84 @@
+* {
+    margin: 0 auto;
+}
+
+h1 {
+    color: aliceblue;
+    font-family: Arial, serif;
+    font-size: 25px;
+    text-shadow: 1px 1px 2px black;
+    padding: 30px 0 20px 0;
+}
+
+.text {
+    color: aliceblue;
+    font-family: Arial, serif;
+    font-size: 15px;
+    text-shadow: 1px 1px 2px black;
+    padding: 30px 0 20px 0;
+}
+
+.main-background {
+    background-color: #476966;
+    height: 200px;
+}
+
+.answer {
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px black;
+    font-family: Arial, serif;
+    width: 120px;
+    height: 30px;
+    font-size: 17px;
+    color: aliceblue;
+    background: #4c5264;
+    box-shadow: 0 5px 0 #44495a;
+    padding: 1px 1px;
+}
+
+.answer:hover {
+    background: #3c4150;
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+}
+
+.form_toggle {
+    padding-left: 100px;
+    padding-top: 20px;
+}
+.form_toggle-item {
+    float: left;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.form_toggle-item input[type=radio] {
+    display: none;
+}
+.form_toggle-item label {
+    display: inline-block;
+    padding: 0px 15px;
+    line-height: 34px;
+    border: 1px solid #476966;
+    cursor: pointer;
+    user-select: none;
+}
+
+.form_toggle .item-1 label {
+    border-radius: 6px 6px 6px 6px;
+}
+.form_toggle .item-2 label {
+    border-radius: 6px 6px 6px 6px;
+    border-right: 1px solid #476966;
+}
+
+.form_toggle .item-1 input[type=radio]:checked + label {
+    background: darkgoldenrod;
+}
+.form_toggle .item-2 input[type=radio]:checked + label {
+    background: darkgoldenrod;
+}
+

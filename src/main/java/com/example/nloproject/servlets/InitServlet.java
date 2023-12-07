@@ -1,4 +1,4 @@
-package com.example.nloproject;
+package com.example.nloproject.servlets;
 
 import java.io.*;
 
@@ -12,6 +12,7 @@ public class InitServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession(true);
-        resp.sendRedirect("jsp/main.jsp");
+        session.setAttribute("Steps", 1);
+        resp.getWriter().write("jsp/main.jsp");
     }
 }
