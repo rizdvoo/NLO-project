@@ -24,11 +24,9 @@ public class HandlerServlet extends HttpServlet {
         int step = (int) session.getAttribute("Steps");
 
         BufferedReader reader = req.getReader();
-
         String value = gson.fromJson(reader, JsonObject.class)
                 .get("answer")
                 .getAsString();
-
 
         if (step == 1) {
             String result = answer.checkVariant(value);
@@ -42,8 +40,6 @@ public class HandlerServlet extends HttpServlet {
             String result = answer.checkVariant(value);
             resp.getWriter().write(result);
         }
-
-
 
     }
 }

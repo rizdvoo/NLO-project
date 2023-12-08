@@ -1,7 +1,7 @@
 function init() {
     $.ajax({
         url: '/NLO_project_war_exploded/init',
-        type: 'GET',
+        type: 'POST',
         contentType: 'text/xml; charset=UTF-8',
         success: function (response) {
             window.location.assign('/NLO_project_war_exploded/' + response);
@@ -15,13 +15,11 @@ function sendAnswer() {
     for (let i = 0; i < radioButtons.length; i++) {
         if (radioButtons[i].checked) {
             let selectedValue = radioButtons[i].value;
-            console.log("Selected value:", selectedValue);
             $.ajax({
                 url: '/NLO_project_war_exploded/handler',
                 type: 'POST',
                 data: JSON.stringify({ answer: selectedValue }),
                 success: function (response) {
-                    console.log("Selected value:", response);
                     window.location.assign('/NLO_project_war_exploded/' + response)
                 },
                 error: function (error) {

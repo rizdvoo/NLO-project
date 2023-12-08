@@ -62,7 +62,7 @@
             </c:when>
 
             <c:when test="${Steps eq 3}">
-                <h1>Ви піднялися на місток! Вас питають прибульці:<br>-Хто ви?</h1>
+                <h1>Ви піднялися на місток! Вас питають прибульці: -Хто ви?</h1>
 
                 <div class="form_toggle-item item-1">
                     <input id="var-5" type="radio" name="radio" value="var-5" checked>
@@ -82,5 +82,26 @@
         </c:choose>
     </form>
 </div>
+
+<c:choose>
+    <c:when test="${Steps eq 1}">
+        <div class="value">
+            <div class="value-box" style="width: 30%;"></div>
+        </div>
+    </c:when>
+
+    <c:when test="${Steps eq 2}">
+        <div class="value">
+            <div class="value-box" style="width: 60%;"></div>
+        </div>
+    </c:when>
+
+    <c:when test="${Steps eq 3}">
+        <div class="value">
+            <div class="value-box" style="width: 90%;"></div>
+        </div>
+    </c:when>
+</c:choose>
+
 </body>
 </html>

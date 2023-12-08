@@ -32,10 +32,6 @@
         <c:when test="${Steps eq 3}">
             <h1 class="main-text">Ваша брехня була викрита!</h1>
         </c:when>
-
-        <c:otherwise>
-            <h1 class="main-text">Поразка!</h1>
-        </c:otherwise>
     </c:choose>
 
     <h1 class="support-text">Поразка!</h1>
