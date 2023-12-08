@@ -1,6 +1,10 @@
 package com.example.nloproject.servlets;
 
+import com.example.nloproject.abstraction.StepStrategy;
 import com.example.nloproject.basis.Answer;
+import com.example.nloproject.basis.Step1Strategy;
+import com.example.nloproject.basis.Step2Strategy;
+import com.example.nloproject.basis.Step3Strategy;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import jakarta.servlet.ServletException;
@@ -12,11 +16,19 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 @WebServlet(name = "handler", value = "/handler")
 public class HandlerServlet extends HttpServlet {
-    Answer answer = new Answer();
+    private static final Map<Integer, StepStrategy> strategies = new HashMap<>();
     Gson gson = new Gson();
+
+    static {
+        strategies.put(1, new Step1Strategy());
+        strategies.put(2, new Step2Strategy());
+        strategies.put(3, new Step3Strategy());
+    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -28,18 +40,8 @@ public class HandlerServlet extends HttpServlet {
                 .get("answer")
                 .getAsString();
 
-        if (step == 1) {
-            String result = answer.checkVariant(value);
-            session.setAttribute("Steps", 2);
-            resp.getWriter().write(result);
-        } else if (step == 2) {
-            String result = answer.checkVariant(value);
-            session.setAttribute("Steps", 3);
-            resp.getWriter().write(result);
-        } else if (step == 3) {
-            String result = answer.checkVariant(value);
-            resp.getWriter().write(result);
-        }
-
+        StepStrategy strategy = strategies.get(step);
+        String result = strategy.execute(value, session);
+        resp.getWriter().write(result);
     }
 }
