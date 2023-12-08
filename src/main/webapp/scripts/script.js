@@ -10,23 +10,17 @@ function init() {
 }
 
 function sendAnswer() {
-    let radioButtons = document.getElementsByName("radio");
-
-    for (let i = 0; i < radioButtons.length; i++) {
-        if (radioButtons[i].checked) {
-            let selectedValue = radioButtons[i].value;
-            $.ajax({
-                url: '/NLO_project_war_exploded/handler',
-                type: 'POST',
-                data: JSON.stringify({ answer: selectedValue }),
-                success: function (response) {
-                    window.location.assign('/NLO_project_war_exploded/' + response)
-                },
-                error: function (error) {
-                    console.error('error', error)
-                }
-            });
-            break;
+    let selectedRadioButton = $('[name="radio"]:checked');
+    let selectedValue = selectedRadioButton.val();
+    $.ajax({
+        url: '/NLO_project_war_exploded/handler',
+        type: 'POST',
+        data: JSON.stringify({ answer: selectedValue }),
+        success: function (response) {
+            window.location.assign('/NLO_project_war_exploded/' + response);
+        },
+        error: function (error) {
+            console.error('error', error);
         }
-    }
+    });
 }
