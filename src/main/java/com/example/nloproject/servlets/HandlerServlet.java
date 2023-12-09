@@ -1,10 +1,7 @@
 package com.example.nloproject.servlets;
 
 import com.example.nloproject.abstraction.StepStrategy;
-import com.example.nloproject.basis.Answer;
-import com.example.nloproject.basis.Step1Strategy;
-import com.example.nloproject.basis.Step2Strategy;
-import com.example.nloproject.basis.Step3Strategy;
+import com.example.nloproject.basis.*;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import jakarta.servlet.ServletException;
