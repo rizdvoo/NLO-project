@@ -24,3 +24,16 @@ function sendAnswer() {
         }
     });
 }
+
+function restart() {
+    $.ajax({
+        url: '/NLO_project_war_exploded/restart',
+        type: 'POST',
+        success: function (response) {
+            window.location.assign('/NLO_project_war_exploded/' + response);
+        },
+        error: function (error) {
+            console.error('error', error);
+        }
+    });
+}

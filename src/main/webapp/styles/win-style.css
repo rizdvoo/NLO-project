@@ -31,3 +31,36 @@
     margin: 0 -50% 0 0;
     transform: translate(-50%, -50%)
 }
+
+.button-restart2 {
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px black;
+    font-family: Arial, serif;
+    width: 300px;
+    height: 70px;
+    font-size: 30px;
+    color: aliceblue;
+    background: #12a47d;
+    box-shadow: 0 5px 0 #00926b;
+    padding: 5px 5px;
+}
+
+.button-restart2:hover {
+    background: #0c6950;
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+}
+
+.background-box {
+    height: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.background-box button {
+    margin: 60px 0 0 0;
+}

@@ -22,6 +22,10 @@
 <div class="green-main-block">
     <h1 class="main-text">Вас повернули додому!</h1>
     <h1 class="support-text">Перемога!</h1>
+
+    <div class="background-box">
+        <button class="button-restart2" onclick="restart()">Розпочати наново!</button>
+    </div>
 </div>
 </body>
 </html>

@@ -35,6 +35,10 @@
     </c:choose>
 
     <h1 class="support-text">Поразка!</h1>
+
+    <div class="background-box">
+        <button class="button-restart1" onclick="restart()">Спробувати ще раз!</button>
+    </div>
 </div>
 </body>
 </html>
